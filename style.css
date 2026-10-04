@@ -1,0 +1,646 @@
+/* =========================================
+   1. PENGATURAN UMUM & FONT GLOBAL
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Font default untuk paragraf dan teks biasa */
+    font-family: 'Manrope', sans-serif; 
+    background-color: #f6ebe1; /* Warna dasar krem */
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. BAGIAN NAVIGASI (MENU ATAS)
+   ========================================= */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 10%;
+    gap: 50px;
+    z-index: 10;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.nav-links a:hover {
+    color: #d1b19a; /* Efek hover saat disentuh mouse */
+}
+
+.btn-contact {
+    background-color: #f6ebe1;
+    color: #4a0d1e;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+}
+
+.btn-contact:hover {
+    background-color: #ffffff;
+}
+
+/* =========================================
+   3. HERO SECTION (BAGIAN UTAMA)
+   ========================================= */
+.hero-section {
+    position: relative;
+    width: 100%; 
+    min-height: 894px; 
+    background: url('assets/bg1.png') no-repeat center top;
+    background-size: cover; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 10% 0px; 
+    color: #ffffff;
+    overflow: hidden;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+/* Judul "PORTFOLIO" */
+.hero-text h1 {
+    font-family: 'Playfair Display SC', serif;
+    font-size: 184px;
+    color: #EEE4DA;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 12px;
+    margin-top: -100px;
+    margin-bottom: 24px;
+    line-height: 1;
+}
+
+/* Sub-judul Profesi */
+.job-title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0px;
+    line-height: 1.2;
+}
+
+.job-title .line-1 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #cba49f;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.job-title .line-2 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Garis aksen kecil di bawah sub-judul */
+.job-title .custom-divider {
+    width: 120px;
+    height: 5px;
+    background-color: #ecc6cc;
+    border: none;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* Teks Deskripsi */
+.hero-text p {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #ffffff;
+    margin-bottom: 35px;
+}
+
+/* Nama Adela Nayli */
+.my-name {
+    font-family: 'Alex Brush', cursive;
+    font-size: 96px;
+    color: #cba49f;
+    font-weight: normal;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image img {
+    width: 750px;
+    height: auto;
+    object-fit: contain;
+    margin-top: 72px;
+}
+
+/* =========================================
+   4. SERVICES SECTION (LAYANAN)
+   ========================================= */
+.services-section {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    margin-top: -120px; 
+    background: url('assets/bg2.png') no-repeat center top;
+    background-size: 100% 400px, cover;
+    padding: 0 10% 40px 10%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: flex-start; */
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.services-section h2 {
+    font-family: 'Playfair Display SC', serif;
+    font-weight: 700;
+    font-size: 72px;
+    letter-spacing: 12px;
+    color: #EEE4DA;
+    margin: 0;
+    text-transform: uppercase;
+    padding-top: 32px;
+    padding-bottom: 16px;
+}
+
+.services-flower {
+    width: 120px;
+    height: auto;
+    position: relative;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1000px;
+    /* margin: 0 auto; */
+    padding-top: 32px;
+}
+
+/* Kartu Layanan (Efek Double Border) */
+.service-card {
+    background-color: #f6ebe1;
+    flex: 1;
+    min-height: 350px;
+    padding: 27px; /* Jarak pas 27px dari kotak luar ke kotak dalam */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow tipis yang elegan */
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card .card-inner {
+    border: 2px solid #cba49f; /* Border kotak dalam dengan warna dan ketebalan yang diminta */
+    padding: 30px 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Judul Layanan (Make Up, Bouquet, Customs) */
+.service-card h3 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 32px;
+    color: #cba49f;
+    margin-bottom: 32px;
+}
+
+.service-card hr {
+    width: 70%;
+    border: 1px solid #cba49f;
+    margin-bottom: 20px;
+}
+
+.service-card p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #555;
+    padding: 20px 18px;
+}
+
+.btn-view {
+    margin-top: auto;
+    background-color: #d1b19a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-view:hover {
+    background-color: #b57a6c;
+}
+
+/* =========================================
+   5. CREATIONS SECTION (GALERI KARYA)
+   ========================================= */
+.creations-section {
+    position: relative;
+    width: 100%;
+    min-height: auto1; /* Tinggi satu halaman penuh */
+    background-color: #f6ebe1;
+    padding: 16px 10% 0px 10%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.creations-section h2 {
+    font-family: 'Playfair Display SC', serif;
+    font-weight: 700;
+    font-size: 72px;
+    letter-spacing: 12px;
+    color: #4A2E2B; /* Warna teks senada dengan tema */
+    margin-top: -10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.creations-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* max-width: 900px; Batasi lebar maksimal agar pas di tengah */
+}
+
+.creation-img {
+    width: 100%;
+    max-width: 700px; 
+    height: auto;
+    margin-bottom: 20px; /* Jarak antara gambar dan tombol See More */
+}
+
+.btn-see-more {
+    background-color: #d1b19a;
+    color: #ffffff;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 4px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 20px;
+    font-weight: 700px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-see-more:hover {
+    background-color: #cba49f;
+    color: #4a2e2b
+}
+
+.flower-left {
+    position: absolute;
+    left: 0px; /* Ditarik sedikit ke pinggir agar kesannya membingkai layar */
+    top: 55%;
+    transform: translateY(-50%);
+    width: 300px; /* Ukuran bisa disesuaikan */
+    height: auto;
+    pointer-events: none;
+}
+
+.flower-right {
+    position: absolute;
+    right: 0px; /* Ditarik sedikit ke pinggir */
+    top: 55%;
+    transform: translateY(-50%);
+    width: 300px; /* Ukuran bisa disesuaikan */
+    height: auto;
+    pointer-events: none;
+}
+
+/* =========================================
+   6. CONTACT SECTION
+   ========================================= */
+.testi-contact-section {
+    position: relative;
+    width: 100%;
+    min-height: auto; /* Tinggi satu halaman penuh */
+    background-color: #f6ebe1;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;     
+}
+
+.testimonials-container {
+    width: 100%;
+    padding: 96px 8% 0px 8%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testi-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    width: 100%;
+    max-width: 1250px;
+    margin-bottom: 20px;
+}
+
+.testimonial-header {
+    flex: 1;
+    text-align: left;
+    position: relative;
+}
+
+.subtitle-testimonials {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 10px;
+    color: #cba49f;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* what clients say */
+.testimonial-header h2 { 
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 56px;
+    letter-spacing: 0px;
+    color: #4d0e13;
+    text-shadow: 2px 8px 8px rgba(0, 0, 0, 0.25);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.testimonial-grid {
+    flex: 1.5;
+    display: flex;
+    gap: 72px;
+    margin-left: 40px;
+}
+
+.testimonial-card {
+    flex: 1;
+    max-width: 300px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.quote-icon {
+    width: 32px;
+    height: auto;
+    flex-shrink: 0;
+    margin-top: -5px;
+    margin-bottom: 12px;
+}
+
+.testimonial-text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-card p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    color: #4A2E2B;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.client-name {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #8C6A66;
+}
+
+.flower-center-wrapper {
+    width: 100%;
+    text-align: center;
+    margin-top: -20px;
+    position: relative;
+    left: 145px; /* Geser sedikit ke kiri agar lebih seimbang */
+}
+
+.flower-center {
+    width: 300px;
+    height: auto;
+}
+
+.contact-footer-container {
+    display: flex;
+    width: 100%;
+    height: 372px;
+    background-color: rgba(203, 164, 159, 0.5); 
+    margin-top: -96px;
+    position: relative;
+    z-index: 10;
+}
+
+.contact-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 45%;
+    height: 100%;
+}
+
+.tools-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.contact-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 55%;
+    height: 100%;
+    padding: 50px 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.contact-text-box {
+    width: 100%;
+    max-width: 405px;
+    flex-shrink: 0;
+}
+
+.sub-heading {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #4A2E2B;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.sub-heading::after {
+    content: "";
+    width: 45px;
+    height: 1px;
+    background-color: #4A2E2B;
+    display: inline-block;
+    vertical-align: middle;
+    flex-grow: 1;
+    margin-left: 0px;
+}
+
+/* Ready to bring... */
+.contact-text-box h3 {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 42px;
+    color: #4A2E2B;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+/* Whether... */
+.contact-text-box p {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #5d403c;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.btn-get-in-touch {
+    display: inline-block;
+    background-color: rgba(77, 14, 19, 0.4);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 25px;
+    transition: background 0.3s;
+}
+
+.btn-get-in-touch:hover {
+    background-color: rgba(77, 14, 19, 0.7);
+}
+
+.contact-info-list {
+    width: 44%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    align-self: center;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-left: 64px;
+}
+
+.info-item img {
+    width: 20px;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.info-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 200px; /* Atur angka ini (misal 190px atau 200px) supaya semua blok teks punya garis mulai yang terkunci di satu titik vertikal yang sama persis */
+}
+
+.info-item .img.icon-loc {
+    width: 181px;
+    height: auto;
+}
+
+.info-label {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #4d0e13;
+    display: block;
+    line-height: 1;
+}
+
+.info-value {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #4d0e13;
+    line-height: 1;
+}
